@@ -12,6 +12,7 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", _add},
 		{NULL, NULL}};
 	int i = 0;
 
