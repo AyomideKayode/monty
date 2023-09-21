@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 			else
 			{
 				free_list(&h);
-				fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
+				fprintf(stderr, "L%u: unknown instruction %s\n", line_num, token);
 				exit(EXIT_FAILURE);
 			}
 		}

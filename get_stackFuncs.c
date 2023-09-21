@@ -9,6 +9,7 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruction_s[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -47,7 +48,7 @@ int check_int(const char *n)
 }
 
 /**
- * push - adds node to the start of dlinkedlist
+ * push - pushes an element to the stack (linked list).
  * @h: head of linked list (node at the bottom of stack)
  * @line_number: bytecode line number
  * @n: integer
@@ -59,7 +60,7 @@ void push(stack_t **h, unsigned int line_number, const char *n)
 		return;
 	if (check_int(n) == -1)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_list(h);
 		exit(EXIT_FAILURE);
 	}
@@ -74,7 +75,8 @@ void push(stack_t **h, unsigned int line_number, const char *n)
 }
 
 /**
- * pall - print all nodes in stack
+ * pall - prints all the values on the stack (linked list)
+ * starting from the top of the stack
  * @h: head of list
  * @line_number: bytecode line number
  */
@@ -94,3 +96,19 @@ void pall(stack_t **h, unsigned int line_number)
 	}
 }
 
+/**
+ * pint -  prints the value at the top of the stack
+ * followed by a new line.
+ * @h: head of list
+ * @line_number: bytecode line number
+ */
+void pint(stack_t **h, unsigned int line_number)
+{
+	if (!h || !*h)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		free_list(h);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*h)->n);
+}

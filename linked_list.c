@@ -17,7 +17,7 @@ int add_node(stack_t **h, int n)
 	new_node = malloc(sizeof(struct stack_s));
 	if (!new_node)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		return (-1);
 	}
 	new_node->n = n;
