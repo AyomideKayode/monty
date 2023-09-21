@@ -8,18 +8,13 @@
 void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruction_s[] = {
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", _add},
-		{"sub", _sub},
-		{"mul", _mul},
-		{"div", _div},
-		{"mod", _mod},
-		{"pchar", pchar},
-		{"pstr", pstr},
-		{"rotl", rotl},
+		{"pall", pall},	{"pint", pint},
+		{"pop", pop},	{"swap", swap},
+		{"add", _add},	{"sub", _sub},
+		{"mul", _mul},	{"div", _div},
+		{"mod", _mod},	{"pchar", pchar},
+		{"pstr", pstr},	{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}};
 	int i = 0;
 
