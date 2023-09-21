@@ -10,8 +10,8 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 	instruction_t instruction_s[] = {
 		{"pall", pall},
 		{"pint", pint},
-		{NULL, NULL}
-	};
+		{"pop", pop},
+		{NULL, NULL}};
 	int i = 0;
 
 	while (instruction_s[i].f != NULL)
