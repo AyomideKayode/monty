@@ -50,6 +50,10 @@ void pint(stack_t **h, unsigned int line_number);
 void pop(stack_t **h, unsigned int line_number);
 void swap(stack_t **h, unsigned int line_number);
 void _add(stack_t **h, unsigned int line_number);
+void _sub(stack_t **h, unsigned int line_number);
+void _mul(stack_t **h, unsigned int line_number);
+void _div(stack_t **h, unsigned int line_number);
+void _mod(stack_t **h, unsigned int line_number);
 
 int add_node(stack_t **h, int n);
 void delete_node(stack_t **h);

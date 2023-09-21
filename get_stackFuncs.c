@@ -13,6 +13,10 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", _add},
+		{"sub", _sub},
+		{"mul", _mul},
+		{"div", _div},
+		{"mod", _mod},
 		{NULL, NULL}};
 	int i = 0;
 
