@@ -5,12 +5,12 @@
 int main(int argc, char *argv[])
 {
 	unsigned int line_num = 1;
-	char *token, *buffer = malloc(sizeof(char) * 10000);
+	char *token = NULL, *buffer = malloc(sizeof(char) * 10000);
 	int fd = open(argv[1], O_RDONLY), ispush = 0;
 	ssize_t reader = read(fd, buffer, 10000);
 	stack_t *h = NULL;
 
-	if (argc != 2)
+	if (argc != 2 || argv[1] == NULL)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -19,10 +19,14 @@ int main(int argc, char *argv[])
 	if (fd == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		close(fd);
 		exit(EXIT_FAILURE);
 	}
 	if (!buffer)
-		return (0);
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	if (reader == -1)
 	{
 		free(buffer);
