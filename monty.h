@@ -48,6 +48,8 @@ void push(stack_t **h, unsigned int line_number, const char *n);
 void pall(stack_t **h, unsigned int line_number);
 void pint(stack_t **h, unsigned int line_number);
 void pop(stack_t **h, unsigned int line_number);
+void swap(stack_t **h, unsigned int line_number);
+
 int add_node(stack_t **h, int n);
 void delete_node(stack_t **h);
 void free_list(stack_t **h);
