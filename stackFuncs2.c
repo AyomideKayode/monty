@@ -47,3 +47,14 @@ void swap(stack_t **h, unsigned int line_number)
 	node->next = *h;
 	(*h) = node;
 }
+
+/**
+ * nop - doesn’t do anything.
+ * @h: head of list
+ * @line_number: bytecode line number
+ */
+void nop(stack_t **h, unsigned int line_number)
+{
+	(void)h;
+	(void)line_number;
+}
