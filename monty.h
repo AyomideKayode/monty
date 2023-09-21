@@ -56,6 +56,7 @@ void _div(stack_t **h, unsigned int line_number);
 void _mod(stack_t **h, unsigned int line_number);
 void pchar(stack_t **h, unsigned int line_number);
 void pstr(stack_t **h, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
 
 int add_node(stack_t **h, int n);
 void delete_node(stack_t **h);
