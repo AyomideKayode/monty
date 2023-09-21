@@ -17,6 +17,7 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 		{"mul", _mul},
 		{"div", _div},
 		{"mod", _mod},
+		{"pchar", pchar},
 		{NULL, NULL}};
 	int i = 0;
 
@@ -110,11 +111,15 @@ void pall(stack_t **h, unsigned int line_number)
  */
 void pint(stack_t **h, unsigned int line_number)
 {
+	int top_val;
+
 	if (!h || !*h)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		free_list(h);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*h)->n);
+
+	top_val = (*h)->n;
+	printf("%d\n", top_val);
 }
