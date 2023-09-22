@@ -14,7 +14,7 @@ void (*execute(char *token1))(stack_t **stack, unsigned int line_number)
 		{"mul", _mul},	{"div", _div},
 		{"mod", _mod},	{"pchar", pchar},
 		{"pstr", pstr},	{"rotl", rotl},
-		{"rotr", rotr},
+		{"rotr", rotr},	{"nop", nop},
 		{NULL, NULL}};
 	int i = 0;
 
@@ -72,6 +72,7 @@ void push(stack_t **h, unsigned int line_number, const char *n)
 	{
 		if (add_node(h, atoi(n)) == -1)
 		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			free_list(h);
 			exit(EXIT_FAILURE);
 		}

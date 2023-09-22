@@ -97,7 +97,7 @@ void _mul(stack_t **h, unsigned int line_number)
 
 void _mod(stack_t **h, unsigned int line_number)
 {
-	if (h == NULL || *h == NULL)
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		free_list(h);

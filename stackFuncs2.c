@@ -22,7 +22,6 @@ void pop(stack_t **h, unsigned int line_number)
  * @h: node to be swapped
  * @line_number: node number
  */
-
 void swap(stack_t **h, unsigned int line_number)
 {
 	stack_t *node = NULL;

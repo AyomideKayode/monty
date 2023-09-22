@@ -49,6 +49,7 @@ void pall(stack_t **h, unsigned int line_number);
 void pint(stack_t **h, unsigned int line_number);
 void pop(stack_t **h, unsigned int line_number);
 void swap(stack_t **h, unsigned int line_number);
+void nop(stack_t **h, unsigned int line_number);
 void _add(stack_t **h, unsigned int line_number);
 void _sub(stack_t **h, unsigned int line_number);
 void _mul(stack_t **h, unsigned int line_number);
