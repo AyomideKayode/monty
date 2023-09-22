@@ -64,4 +64,7 @@ int add_node(stack_t **h, int n);
 void delete_node(stack_t **h);
 void free_list(stack_t **h);
 
+void queue(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
+
 #endif
