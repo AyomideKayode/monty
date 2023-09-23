@@ -42,6 +42,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Function Prototypes */
 void (*execute(char *token1))(stack_t **stack, unsigned int line_number);
 int check_int(const char *n);
 void push(stack_t **h, unsigned int line_number, const char *n);
@@ -50,20 +51,24 @@ void pint(stack_t **h, unsigned int line_number);
 void pop(stack_t **h, unsigned int line_number);
 void swap(stack_t **h, unsigned int line_number);
 void nop(stack_t **h, unsigned int line_number);
-void _add(stack_t **h, unsigned int line_number);
-void _sub(stack_t **h, unsigned int line_number);
-void _mul(stack_t **h, unsigned int line_number);
-void _div(stack_t **h, unsigned int line_number);
-void _mod(stack_t **h, unsigned int line_number);
 void pchar(stack_t **h, unsigned int line_number);
 void pstr(stack_t **h, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 
+/* Math opcodes function prototypes */
+void _add(stack_t **h, unsigned int line_number);
+void _sub(stack_t **h, unsigned int line_number);
+void _mul(stack_t **h, unsigned int line_number);
+void _div(stack_t **h, unsigned int line_number);
+void _mod(stack_t **h, unsigned int line_number);
+
+/* Doubly Linked List function prototypes */
 int add_node(stack_t **h, int n);
 void delete_node(stack_t **h);
 void free_list(stack_t **h);
 
+/* Stack and Queue mode function prototypes */
 void queue(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 
